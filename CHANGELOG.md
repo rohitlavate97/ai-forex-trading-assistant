@@ -61,3 +61,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Created premium Dark-Mode Bloomberg/TradingView style CSS stylesheet in `frontend/src/theme.css` to govern Gradio layouts.
+- Developed `ForexAPIClient` in `frontend/src/api_client.py` using `httpx` to handle async communications with backend market-data endpoints.
