@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.0] - Unreleased
+
+### Added
+- Created the RAG Knowledge Base module in `backend/src/modules/rag`.
+- Implemented `/upload` endpoint to ingest files (PDF, TXT), chunk them using `LlamaIndex`, and store vectors directly in a `Qdrant` instance via `llama-index-vector-stores-qdrant`.
+- Implemented `/query` endpoint to perform similarity searches against the Qdrant vector database.
+- Drafted test suite for the knowledge base with heavily mocked LLM and DB instances using `unittest.mock.patch` in `backend/tests/test_rag.py`.
+- Wrote `docs/rag_knowledge_base_guide.md` specifying upload requirements, embedding configurations, and architecture flow.
+
 ## [0.10.0] - Unreleased
 
 ### Added

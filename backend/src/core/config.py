@@ -26,6 +26,8 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: str | None = None
     LLM_MODEL: str = "gpt-4o"
     MARKET_DATA_PROVIDER: str = "mock"
+    QDRANT_HOST: str = "localhost"
+    QDRANT_PORT: int = 6333
 
     # CORS Configuration
     ALLOWED_HOSTS: Annotated[List[str], BeforeValidator(parse_cors_origins)] = [
