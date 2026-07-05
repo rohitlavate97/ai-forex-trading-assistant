@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from src.core.config import settings
+from src.modules.auth.router import router as auth_router
 
 app = FastAPI(
     title="AI Forex Trading Assistant API",
@@ -10,11 +12,14 @@ app = FastAPI(
 # CORS configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Restrict this in production via config
+    allow_origins=[str(origin) for origin in settings.ALLOWED_HOSTS],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include Routers
+app.include_router(auth_router, prefix=settings.API_V1_PREFIX)
 
 
 @app.get("/")
