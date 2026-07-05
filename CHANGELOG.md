@@ -44,3 +44,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created the initial database migration script `0001_create_users_table.py` for mapping users schema to MySQL.
 - Developed an idempotent database seeding script `backend/src/scripts/seed_db.py` to populate baseline admin and trader accounts.
 - Documented schema migration commands, connection pool details, and setup parameters in `docs/database_guide.md`.
+
+## [0.4.0] - Unreleased
+
+### Added
+- Created global async Redis connection manager in `backend/src/core/redis.py` for caching live price rates and rate limit details.
+- Added strict incoming price tick schemas and extreme price deviation validation rules in `backend/src/modules/market_data/validation.py`.
+- Developed mock WebSocket feed generator server in `backend/src/modules/market_data/mock_provider.py` to broadcast simulated forex ticks for local testing.
+- Created `MarketDataIngestionService` in `backend/src/modules/market_data/ingestion.py` featuring WebSocket connectivity, exponential backoff reconnects, and Redis cache streaming.
+- Implemented `MarketDataService` and FastAPI router endpoints under `/api/v1/market-data` for live currency queries, tick histories, and feed metrics.
+- Integrated database connection verification and Redis ping checks into the `/health` endpoint and configured FastAPI lifespan events to manage background tasks.
+- Added market data validation and feed resilience tests in `backend/tests/test_market_data.py` to ensure schema constraints and deviation checks are fully operational.
+- Created Market Data Ingestion and Caching feature guide in `docs/market_data_guide.md` detailing pip concepts, validation thresholds, and API specs.
