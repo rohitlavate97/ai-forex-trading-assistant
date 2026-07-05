@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.0] - Unreleased
+
+### Added
+- Created `Market Research Agent` in `backend/src/modules/agents/market_research/agent.py` to evaluate live currency pair overviews, price trends, and volatility summaries.
+- Developed `get_currency_overview`, `get_volatility_summary`, and `get_trend_summary` tools utilizing the `MarketDataService` to extract insights directly from Redis caching.
+- Created `backend/tests/test_market_research.py` to mock Redis interactions and test volatility math and LLM integration.
+- Authored `docs/market_research_agent_guide.md` specifying prompt rules, limitations, and the scope of price action evaluation.
+
 ## [0.9.0] - Unreleased
 
 ### Added
