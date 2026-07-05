@@ -15,3 +15,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created `requirements.txt` files for both frontend and backend packages.
 - Added basic placeholder entrypoints `backend/src/main.py` and `frontend/app.py` for sanity testing.
 - Initialized Git branch `milestone-01-project-setup` for the project setup tasks.
+- Configured GitHub Actions CI pipeline (`ci.yml`) to automatically validate code styling, linting, typing, and test compliance.
+- Set up testing directories and placeholder test modules for both backend and frontend.
