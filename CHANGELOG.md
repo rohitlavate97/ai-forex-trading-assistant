@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.16.0] - Unreleased
+
+### Added
+- Created `backend/tests/test_e2e.py` utilizing comprehensive async mocking to perform end-to-end API baseline validations.
+- Patched Redis connection initialization to prevent network errors during isolated test environments.
+- Added `REDIS_PASSWORD` configurations to `backend/src/core/config.py` resolving startup environment omissions.
+- Completed all functionality listed in the 16-phase roadmap.
+
 ## [0.15.0] - Unreleased
 
 ### Added
