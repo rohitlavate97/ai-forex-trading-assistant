@@ -80,3 +80,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Created `EconomicEvent` database model and Alembic schema migration script `d002_create_economic_events_table.py` inside `backend/src/modules/economic_calendar/models.py`.
+- Updated database seeding script in `backend/src/scripts/seed_db.py` to support high-impact macro releases (interest decisions, CPI, GDP).
+- Coded SQL database query repository, Pydantic schemas, and FastAPI REST endpoints under `/api/v1/economic-calendar` in `backend/src/modules/economic_calendar/`.
+- Programmed `economic_calendar_agent` using Pydantic AI in `backend/src/modules/economic_calendar/agent.py` utilizing context dependency injection to query database sessions, and saved prompts in `backend/src/modules/economic_calendar/prompts.py`.
+- Added tests in `backend/tests/test_economic_calendar.py` covering repository queries and agent tool calls.
+- Created Economic Calendar Feature Guide in `docs/economic_calendar_agent_guide.md` documenting schema fields, endpoints, and LLM boundaries.
