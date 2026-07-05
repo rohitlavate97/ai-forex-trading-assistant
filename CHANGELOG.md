@@ -52,3 +52,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added strict incoming price tick schemas and extreme price deviation validation rules in `backend/src/modules/market_data/validation.py`.
 - Developed mock WebSocket feed generator server in `backend/src/modules/market_data/mock_provider.py` to broadcast simulated forex ticks for local testing.
 - Created `MarketDataIngestionService` in `backend/src/modules/market_data/ingestion.py` featuring WebSocket connectivity, exponential backoff reconnects, and Redis cache streaming.
+- Implemented `MarketDataService` and FastAPI router endpoints under `/api/v1/market-data` for live currency queries, tick histories, and feed metrics.
+- Integrated database connection verification and Redis ping checks into the `/health` endpoint and configured FastAPI lifespan events to manage background tasks.
