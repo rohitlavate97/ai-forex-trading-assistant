@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.13.0] - Unreleased
+
+### Added
+- Created the Trading Journal Management module (`backend/src/modules/journal`).
+- Designed the `JournalEntry` SQLAlchemy database model and updated Alembic migrations.
+- Implemented robust `JournalEntryCreate`, `JournalEntryUpdate`, and `JournalEntryResponse` schemas.
+- Built comprehensive CRUD API endpoints allowing users to track their trading performance.
+- Added comprehensive unit testing coverage for all endpoints via an in-memory SQLite database setup.
+- Created `docs/journal_management_guide.md` summarizing the REST structure.
+
 ## [0.12.0] - Unreleased
 
 ### Added

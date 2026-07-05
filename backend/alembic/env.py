@@ -10,6 +10,7 @@ if config.config_file_name is not None:
 # Import our metadata and models
 from src.core.database import Base
 from src.modules.auth.models import User  # Registers User model in metadata
+from src.modules.journal.models import JournalEntry  # Registers JournalEntry model in metadata
 
 target_metadata = Base.metadata
 

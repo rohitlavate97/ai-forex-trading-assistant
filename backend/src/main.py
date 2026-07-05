@@ -67,6 +67,7 @@ app.add_middleware(
 )
 
 from src.modules.chat.router import router as chat_router
+from src.modules.journal.router import router as journal_router
 
 # Include Routers
 app.include_router(auth_router, prefix=settings.API_V1_PREFIX)
@@ -75,6 +76,7 @@ app.include_router(calendar_router, prefix=settings.API_V1_PREFIX)
 app.include_router(news_router, prefix=settings.API_V1_PREFIX)
 app.include_router(rag_router, prefix=settings.API_V1_PREFIX)
 app.include_router(chat_router, prefix=settings.API_V1_PREFIX)
+app.include_router(journal_router, prefix=settings.API_V1_PREFIX)
 
 
 @app.get("/")
