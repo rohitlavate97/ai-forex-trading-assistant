@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.0] - Unreleased
+
+### Added
+- Created `Fundamental Analysis Agent` in `backend/src/modules/agents/fundamental_analysis/agent.py` to synthesize macroeconomic and news sentiment data.
+- Built cross-domain tools `get_macroeconomic_data` and `get_news_sentiment_data` that directly leverage the `EconomicCalendarRepository` and `NewsIntelligenceRepository`.
+- Applied strict AI prompt guardrails mandating probabilistic language, data grounding, and investment disclaimers.
+- Added tests in `backend/tests/test_fundamental_analysis.py` covering tool logic and LLM mocking.
+- Created `docs/fundamental_analysis_agent_guide.md` documenting the architecture, prompt boundaries, and testing logic.
+
 ### Added
 - Created repository folder structure for backend (FastAPI) and frontend (Gradio).
 - Configured project settings in `pyproject.toml` including configurations for Ruff linter/formatter, MyPy type checks, and Pytest.
