@@ -55,3 +55,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implemented `MarketDataService` and FastAPI router endpoints under `/api/v1/market-data` for live currency queries, tick histories, and feed metrics.
 - Integrated database connection verification and Redis ping checks into the `/health` endpoint and configured FastAPI lifespan events to manage background tasks.
 - Added market data validation and feed resilience tests in `backend/tests/test_market_data.py` to ensure schema constraints and deviation checks are fully operational.
+- Created Market Data Ingestion and Caching feature guide in `docs/market_data_guide.md` detailing pip concepts, validation thresholds, and API specs.
