@@ -72,3 +72,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Implemented mathematical algorithms for standard technical indicators (SMA, EMA, RSI, MACD, Bollinger Bands, ATR, Fibonacci Retracement, Ichimoku Cloud) in `backend/src/modules/agents/tech_analysis/calculators.py`.
 - Developed database-querying agent tools `tool_get_indicators_summary` and `tool_get_advanced_indicators` in `backend/src/modules/agents/tech_analysis/tools.py`.
+- Programmed `tech_analysis_agent` using Pydantic AI in `backend/src/modules/agents/tech_analysis/agent.py` and saved the versioned specialist system guidelines in `backend/src/modules/agents/tech_analysis/prompts.py`.
