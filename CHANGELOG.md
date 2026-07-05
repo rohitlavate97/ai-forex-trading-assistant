@@ -17,3 +17,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initialized Git branch `milestone-01-project-setup` for the project setup tasks.
 - Configured GitHub Actions CI pipeline (`ci.yml`) to automatically validate code styling, linting, typing, and test compliance.
 - Set up testing directories and placeholder test modules for both backend and frontend.
+- Created `Dockerfile` configuration for the FastAPI backend and Gradio frontend services.
+- Added `docker-compose.yml` to orchestrate MySQL 8.4, Redis 7, RabbitMQ 3, Qdrant vector DB, and the application services.
