@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.0] - Unreleased
+
+### Added
+- Created the AI Chat Agent (`backend/src/modules/chat`) using Pydantic AI.
+- Implemented `/api/v1/chat/stream` endpoint for SSE streaming.
+- Equipped the agent with tools for Knowledge Base search, Market Overview, News Sentiment, and Macroeconomic data.
+- Enforced a system prompt to avoid making trading recommendations and to ground answers in fetched data.
+- Added test coverage in `backend/tests/test_chat.py` testing the SSE payload formatting.
+- Created `docs/ai_chat_guide.md` summarizing architecture and streaming mechanics.
+
 ## [0.11.0] - Unreleased
 
 ### Added
