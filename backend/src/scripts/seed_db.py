@@ -9,10 +9,12 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 from src.core.database import async_session_maker, async_engine
 from src.modules.auth.models import User, UserRole
 from src.modules.auth.security import get_password_hash
+from src.modules.economic_calendar.models import EconomicEvent, EventImportance
+from datetime import datetime, timedelta
 
 
 async def seed_data() -> None:
-    """Seed default administrative and trader accounts into the database."""
+    """Seed default administrative accounts, trader accounts, and economic events."""
     print("Database seeding started...")
     
     async with async_session_maker() as session:
@@ -57,6 +59,68 @@ async def seed_data() -> None:
             else:
                 print("Trader account already exists. Skipping...")
                 
+            # 3. Seed Economic Events
+            events_to_seed = [
+                {
+                    "event_name": "Fed Interest Rate Decision",
+                    "country": "United States",
+                    "currency": "USD",
+                    "importance": EventImportance.HIGH,
+                    "event_time": datetime(2026, 7, 8, 18, 0, 0),
+                    "forecast": "5.25%",
+                    "previous": "5.25%",
+                },
+                {
+                    "event_name": "ECB Monetary Policy Statement",
+                    "country": "Eurozone",
+                    "currency": "EUR",
+                    "importance": EventImportance.HIGH,
+                    "event_time": datetime(2026, 7, 9, 12, 15, 0),
+                    "forecast": "4.00%",
+                    "previous": "4.25%",
+                },
+                {
+                    "event_name": "US CPI Inflation MoM",
+                    "country": "United States",
+                    "currency": "USD",
+                    "importance": EventImportance.HIGH,
+                    "event_time": datetime(2026, 7, 4, 12, 30, 0),
+                    "actual": "0.2%",
+                    "forecast": "0.2%",
+                    "previous": "0.1%",
+                },
+                {
+                    "event_name": "UK GDP MoM",
+                    "country": "United Kingdom",
+                    "currency": "GBP",
+                    "importance": EventImportance.MEDIUM,
+                    "event_time": datetime(2026, 7, 2, 7, 0, 0),
+                    "actual": "-0.1%",
+                    "forecast": "0.1%",
+                    "previous": "0.2%",
+                },
+                {
+                    "event_name": "Australia Unemployment Rate",
+                    "country": "Australia",
+                    "currency": "AUD",
+                    "importance": EventImportance.HIGH,
+                    "event_time": datetime(2026, 7, 16, 1, 30, 0),
+                    "forecast": "4.0%",
+                    "previous": "3.9%",
+                }
+            ]
+            
+            for ev in events_to_seed:
+                result_ev = await session.execute(
+                    select(EconomicEvent).where(EconomicEvent.event_name == ev["event_name"])
+                )
+                existing_ev = result_ev.scalars().first()
+                if not existing_ev:
+                    print(f"Creating economic event: {ev['event_name']}")
+                    session.add(EconomicEvent(**ev))
+                else:
+                    print(f"Economic event already exists: {ev['event_name']}. Skipping...")
+                    
             await session.commit()
             print("Database seeding completed successfully.")
             
