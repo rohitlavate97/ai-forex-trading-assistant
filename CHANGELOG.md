@@ -75,3 +75,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Programmed `tech_analysis_agent` using Pydantic AI in `backend/src/modules/agents/tech_analysis/agent.py` and saved the versioned specialist system guidelines in `backend/src/modules/agents/tech_analysis/prompts.py`.
 - Added technical analysis tests in `backend/tests/test_tech_analysis.py` covering indicators calculators and mocked agent runs.
 - Created Technical Analysis Agent feature guide in `docs/tech_analysis_agent_guide.md` detailing prompt parameters, calculator codes, and tool scopes.
+
+## [0.7.0] - Unreleased
+
+### Added
+- Created `EconomicEvent` database model and Alembic schema migration script `d002_create_economic_events_table.py` inside `backend/src/modules/economic_calendar/models.py`.
