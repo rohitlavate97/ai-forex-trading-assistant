@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, UploadFile, File, HTTPException, status
 from typing import Any
 
-from src.core.auth import get_current_user
+from src.modules.auth.dependencies import get_current_user
 from src.modules.rag.schemas import DocumentUploadResponse, QueryRequest, QueryResponse
 from src.modules.rag.service import RAGService
 

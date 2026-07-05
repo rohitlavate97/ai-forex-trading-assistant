@@ -35,4 +35,4 @@ minversion = "6.0"
 addopts = "-ra -q --strict-markers"
 testpaths = ["backend/tests", "frontend/tests"]
 asyncio_mode = "auto"
-pythonpath = ["backend/src", "frontend"]
+pythonpath = ["backend", "frontend"]
