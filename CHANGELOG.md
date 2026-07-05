@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.15.0] - Unreleased
+
+### Added
+- Created the `webhooks` module (`backend/src/modules/webhooks`) for processing external alerts (e.g., TradingView).
+- Implemented `WebhookPayload` schema for standardized external signal parsing.
+- Secured the `POST /api/v1/webhooks/` endpoint requiring a custom header `x-webhook-token`.
+- Developed mock tests `backend/tests/test_webhooks.py` asserting authorization logic.
+- Created `docs/webhook_integration_guide.md` specifying integration formats.
+
 ## [0.14.0] - Unreleased
 
 ### Added
