@@ -44,3 +44,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created the initial database migration script `0001_create_users_table.py` for mapping users schema to MySQL.
 - Developed an idempotent database seeding script `backend/src/scripts/seed_db.py` to populate baseline admin and trader accounts.
 - Documented schema migration commands, connection pool details, and setup parameters in `docs/database_guide.md`.
+
+## [0.4.0] - Unreleased
+
+### Added
+- Created global async Redis connection manager in `backend/src/core/redis.py` for caching live price rates and rate limit details.
+- Added strict incoming price tick schemas and extreme price deviation validation rules in `backend/src/modules/market_data/validation.py`.
