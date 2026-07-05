@@ -85,3 +85,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Programmed `economic_calendar_agent` using Pydantic AI in `backend/src/modules/economic_calendar/agent.py` utilizing context dependency injection to query database sessions, and saved prompts in `backend/src/modules/economic_calendar/prompts.py`.
 - Added tests in `backend/tests/test_economic_calendar.py` covering repository queries and agent tool calls.
 - Created Economic Calendar Feature Guide in `docs/economic_calendar_agent_guide.md` documenting schema fields, endpoints, and LLM boundaries.
+
+## [0.8.0] - Unreleased
+
+### Added
+- Created `NewsArticle` database model and Alembic schema migration script `d003_create_news_articles_table.py` inside `backend/src/modules/news_intelligence/models.py`.
