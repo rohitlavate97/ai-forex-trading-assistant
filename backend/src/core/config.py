@@ -42,6 +42,14 @@ class Settings(BaseSettings):
     MYSQL_USER: str = "forex_user"
     MYSQL_PASSWORD: str = "forex_password"
     MYSQL_DATABASE: str = "forex_assistant"
+    
+    # Redis and RabbitMQ Settings
+    REDIS_HOST: str = "localhost"
+    REDIS_PORT: int = 6379
+    RABBITMQ_HOST: str = "localhost"
+    RABBITMQ_PORT: int = 5672
+    RABBITMQ_USER: str = "guest"
+    RABBITMQ_PASSWORD: str = "guest"
 
     @property
     def async_database_url(self) -> str:

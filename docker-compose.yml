@@ -125,28 +125,28 @@ services:
   # --- Celery Worker (Task Queue Processor) ---
   # Note: Celery worker service is configured and ready. We can uncomment this
   # once Celery task definitions are implemented in the codebase.
-  # worker:
-  #   build:
-  #     context: ./backend
-  #     dockerfile: Dockerfile
-  #   container_name: forex_worker
-  #   restart: unless-stopped
-  #   command: celery -A src.core.celery worker --loglevel=info
-  #   volumes:
-  #     - ./backend:/app
-  #   environment:
-  #     - ENV=development
-  #     - MYSQL_HOST=mysql
-  #     - REDIS_HOST=redis
-  #     - RABBITMQ_HOST=rabbitmq
-  #     - QDRANT_HOST=qdrant
-  #   depends_on:
-  #     mysql:
-  #       condition: service_healthy
-  #     redis:
-  #       condition: service_healthy
-  #     rabbitmq:
-  #       condition: service_healthy
+  worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: forex_worker
+    restart: unless-stopped
+    command: celery -A src.core.celery worker --loglevel=info
+    volumes:
+      - ./backend:/app
+    environment:
+      - ENV=development
+      - MYSQL_HOST=mysql
+      - REDIS_HOST=redis
+      - RABBITMQ_HOST=rabbitmq
+      - QDRANT_HOST=qdrant
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
 
 volumes:
   mysql_data:

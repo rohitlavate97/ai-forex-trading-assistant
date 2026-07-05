@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.14.0] - Unreleased
+
+### Added
+- Implemented `Celery` application configuration in `backend/src/core/celery.py` connected to RabbitMQ and Redis.
+- Authored the `reports` module (`backend/src/modules/reports/service.py`) to generate Markdown-based trading summaries.
+- Created `generate_daily_report_task` to asynchronously produce and save reports.
+- Uncommented and configured the `celery` worker service in `docker-compose.yml`.
+- Added mock tests in `backend/tests/test_celery_tasks.py` verifying file generation.
+- Created `docs/celery_and_reports_guide.md`.
+
 ## [0.13.0] - Unreleased
 
 ### Added
