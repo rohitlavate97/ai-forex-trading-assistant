@@ -29,3 +29,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created `backend/src/core/database.py` configuring SQLAlchemy async engine, session makers, base models, and db dependencies.
 - Added `User` database models with UUID representation, encryption passwords, roles enum, and audit columns in `backend/src/modules/auth/models.py`.
 - Created Pydantic DTO validation schemas for User registration, updates, login, and token generation in `backend/src/modules/auth/schemas.py`.
+- Developed security utilities in `backend/src/modules/auth/security.py` covering password hashing (bcrypt) and JWT creation/verification using PyJWT.
