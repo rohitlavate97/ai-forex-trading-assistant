@@ -62,3 +62,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Created premium Dark-Mode Bloomberg/TradingView style CSS stylesheet in `frontend/src/theme.css` to govern Gradio layouts.
 - Developed `ForexAPIClient` in `frontend/src/api_client.py` using `httpx` to handle async communications with backend market-data endpoints.
+- Updated `frontend/app.py` with custom theme integration, card templates, and real-time dashboard layout featuring live quotes, watchlist metrics, and market mover tables.
+- Wired a 2-second `gr.Timer` polling loop to dynamically fetch rates and refresh the UI layout.
