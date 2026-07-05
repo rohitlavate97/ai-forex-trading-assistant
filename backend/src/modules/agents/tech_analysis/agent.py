@@ -1,6 +1,7 @@
 from typing import Any
 from pydantic_ai import Agent, RunContext
-from pydantic_ai.models.openai import OpenAIModel
+from pydantic_ai.models.openai import OpenAIChatModel
+from pydantic_ai.providers.openai import OpenAIProvider
 from src.core.config import settings
 from src.modules.agents.tech_analysis.prompts import SYSTEM_PROMPT
 from src.modules.agents.tech_analysis.tools import (
@@ -11,7 +12,7 @@ from src.modules.agents.tech_analysis.tools import (
 # Initialize OpenAI Model using credentials from global Settings
 # If the key is blank, we can create a dummy model to prevent startup crashes
 if settings.OPENAI_API_KEY:
-    agent_model = OpenAIModel(settings.LLM_MODEL, api_key=settings.OPENAI_API_KEY)
+    agent_model = OpenAIChatModel(settings.LLM_MODEL, provider=OpenAIProvider(api_key=settings.OPENAI_API_KEY))
 else:
     # Fallback to a placeholder model that can be overridden in tests
     agent_model = "test"

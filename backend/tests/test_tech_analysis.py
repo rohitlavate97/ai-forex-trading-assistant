@@ -65,7 +65,7 @@ def test_fibonacci_retracement_calculation():
     # Level 61.8% should be 2.0 - 0.618 = 1.382
     fib = calculate_fibonacci_retracement(2.0, 1.0)
     assert fib["level_50.0"] == 1.5
-    assert fib["level_61.8"] == 1.382
+    assert fib["level_61.8"] == pytest.approx(1.382)
 
 
 @pytest.mark.asyncio

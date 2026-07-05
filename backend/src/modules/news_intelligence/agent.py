@@ -1,13 +1,14 @@
 from typing import Optional, List
 from pydantic_ai import Agent, RunContext
-from pydantic_ai.models.openai import OpenAIModel
+from pydantic_ai.models.openai import OpenAIChatModel
+from pydantic_ai.providers.openai import OpenAIProvider
 from sqlalchemy.ext.asyncio import AsyncSession
 from src.core.config import settings
 from src.modules.news_intelligence.prompts import SYSTEM_PROMPT
 from src.modules.news_intelligence.service import NewsIntelligenceService
 
 if settings.OPENAI_API_KEY:
-    agent_model = OpenAIModel(settings.LLM_MODEL, api_key=settings.OPENAI_API_KEY)
+    agent_model = OpenAIChatModel(settings.LLM_MODEL, provider=OpenAIProvider(api_key=settings.OPENAI_API_KEY))
 else:
     agent_model = "test"
 

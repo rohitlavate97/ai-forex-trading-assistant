@@ -90,3 +90,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Created `NewsArticle` database model and Alembic schema migration script `d003_create_news_articles_table.py` inside `backend/src/modules/news_intelligence/models.py`.
+- Developed database-querying layers `NewsIntelligenceRepository` and `NewsIntelligenceService`, and exposed RESTful filtering endpoints under `/api/v1/news` in `backend/src/modules/news_intelligence/`.
+- Programmed `news_intelligence_agent` using Pydantic AI in `backend/src/modules/news_intelligence/agent.py` to extract market sentiment and estimate news flow impact, and saved prompts in `backend/src/modules/news_intelligence/prompts.py`.
+- Resolved `pydantic-ai` v2.5.0 migration issues by migrating from `OpenAIModel` to `OpenAIChatModel` + `OpenAIProvider`.
+- Added tests in `backend/tests/test_news_intelligence.py` covering repository queries and mocked agent executions.
+- Created News Intelligence Agent Guide in `docs/news_intelligence_agent_guide.md` documenting schema fields, filtering tools, and the LLM boundary.
