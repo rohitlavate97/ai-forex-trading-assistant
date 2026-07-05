@@ -66,3 +66,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wired a 2-second `gr.Timer` polling loop to dynamically fetch rates and refresh the UI layout.
 - Added API client unit tests in `frontend/tests/test_dashboard.py` verifying response parsing and HTTP error handling.
 - Created Gradio Dashboard layout and timer polling feature guide in `docs/dashboard_guide.md` covering UI styles, layouts, and API client specs.
+
+## [0.6.0] - Unreleased
+
+### Added
+- Implemented mathematical algorithms for standard technical indicators (SMA, EMA, RSI, MACD, Bollinger Bands, ATR, Fibonacci Retracement, Ichimoku Cloud) in `backend/src/modules/agents/tech_analysis/calculators.py`.
+- Developed database-querying agent tools `tool_get_indicators_summary` and `tool_get_advanced_indicators` in `backend/src/modules/agents/tech_analysis/tools.py`.
+- Programmed `tech_analysis_agent` using Pydantic AI in `backend/src/modules/agents/tech_analysis/agent.py` and saved the versioned specialist system guidelines in `backend/src/modules/agents/tech_analysis/prompts.py`.
+- Added technical analysis tests in `backend/tests/test_tech_analysis.py` covering indicators calculators and mocked agent runs.
+- Created Technical Analysis Agent feature guide in `docs/tech_analysis_agent_guide.md` detailing prompt parameters, calculator codes, and tool scopes.
