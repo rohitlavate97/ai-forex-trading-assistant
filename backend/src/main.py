@@ -8,6 +8,7 @@ from src.core.database import async_session_maker
 from src.core.redis import init_redis, close_redis, get_redis
 from src.modules.auth.router import router as auth_router
 from src.modules.market_data.router import router as market_data_router
+from src.modules.economic_calendar.router import router as calendar_router
 from src.modules.market_data.ingestion import MarketDataIngestionService
 
 # Ingestion service container
@@ -66,6 +67,7 @@ app.add_middleware(
 # Include Routers
 app.include_router(auth_router, prefix=settings.API_V1_PREFIX)
 app.include_router(market_data_router, prefix=settings.API_V1_PREFIX)
+app.include_router(calendar_router, prefix=settings.API_V1_PREFIX)
 
 
 @app.get("/")
