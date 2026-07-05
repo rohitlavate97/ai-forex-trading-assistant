@@ -19,3 +19,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Set up testing directories and placeholder test modules for both backend and frontend.
 - Created `Dockerfile` configuration for the FastAPI backend and Gradio frontend services.
 - Added `docker-compose.yml` to orchestrate MySQL 8.4, Redis 7, RabbitMQ 3, Qdrant vector DB, and the application services.
+- Created `docs/developer_setup_guide.md` covering prerequisites, environment configurations, Docker Compose tasks, and troubleshooting steps.
+- Created `docs/adr/0001-agent-framework-selection.md` outlining the architectural rationale for choosing Pydantic AI for specialist agents and LangGraph for the coordinator.
