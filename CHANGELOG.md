@@ -34,3 +34,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created endpoints for user registration, token login, refresh, user profiles, and RBAC admin-only validations under `/api/v1/auth`, and integrated the router into the main FastAPI application.
 - Added comprehensive authentication test suite in `backend/tests/test_auth.py` covering password hashing, JWT operations, and service registration validations.
 - Documented authentication architecture, relational schemas, REST endpoints, and security implementations in `docs/auth_guide.md`.
+
+## [0.3.0] - Unreleased
+
+### Added
+- Created `milestones` folder containing markdown summary records for Milestone 1 and Milestone 2.
+- Loosened package dependencies versions in `backend/requirements.txt` to enable smooth python package resolutions.
+- Initialized Alembic database migrations framework in `backend/alembic` and configured `backend/alembic/env.py` to support asynchronous migrations.
+- Created the initial database migration script `0001_create_users_table.py` for mapping users schema to MySQL.
+- Developed an idempotent database seeding script `backend/src/scripts/seed_db.py` to populate baseline admin and trader accounts.
+- Documented schema migration commands, connection pool details, and setup parameters in `docs/database_guide.md`.
