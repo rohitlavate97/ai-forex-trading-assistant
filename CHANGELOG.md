@@ -56,3 +56,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Integrated database connection verification and Redis ping checks into the `/health` endpoint and configured FastAPI lifespan events to manage background tasks.
 - Added market data validation and feed resilience tests in `backend/tests/test_market_data.py` to ensure schema constraints and deviation checks are fully operational.
 - Created Market Data Ingestion and Caching feature guide in `docs/market_data_guide.md` detailing pip concepts, validation thresholds, and API specs.
+
+## [0.5.0] - Unreleased
+
+### Added
+- Created premium Dark-Mode Bloomberg/TradingView style CSS stylesheet in `frontend/src/theme.css` to govern Gradio layouts.
+- Developed `ForexAPIClient` in `frontend/src/api_client.py` using `httpx` to handle async communications with backend market-data endpoints.
+- Updated `frontend/app.py` with custom theme integration, card templates, and real-time dashboard layout featuring live quotes, watchlist metrics, and market mover tables.
+- Wired a 2-second `gr.Timer` polling loop to dynamically fetch rates and refresh the UI layout.
+- Added API client unit tests in `frontend/tests/test_dashboard.py` verifying response parsing and HTTP error handling.
+- Created Gradio Dashboard layout and timer polling feature guide in `docs/dashboard_guide.md` covering UI styles, layouts, and API client specs.
