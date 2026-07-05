@@ -50,3 +50,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Created global async Redis connection manager in `backend/src/core/redis.py` for caching live price rates and rate limit details.
 - Added strict incoming price tick schemas and extreme price deviation validation rules in `backend/src/modules/market_data/validation.py`.
+- Developed mock WebSocket feed generator server in `backend/src/modules/market_data/mock_provider.py` to broadcast simulated forex ticks for local testing.
