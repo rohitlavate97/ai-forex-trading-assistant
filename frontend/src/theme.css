@@ -1,0 +1,119 @@
+/* ==============================================================================
+   AI Forex Trading Assistant Custom CSS Branding
+   Implements a premium Dark-Mode Fintech layout (Bloomberg / TradingView style)
+   ============================================================================== */
+
+:root {
+  --bg-primary: #0b0f19;
+  --bg-secondary: #111827;
+  --bg-card: #1f2937;
+  --border-color: #374151;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --color-up: #10b981;
+  --color-down: #ef4444;
+  --color-accent: #3b82f6;
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Page container */
+.gradio-container {
+  background-color: var(--bg-primary) !important;
+  font-family: var(--font-family) !important;
+  color: var(--text-main) !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+}
+
+/* Markdown styling */
+.prose {
+  color: var(--text-main) !important;
+}
+.prose h1 {
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6, #1d4ed8) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  margin-bottom: 0.5rem !important;
+}
+.prose p {
+  color: var(--text-muted) !important;
+}
+
+/* Tabs styling */
+.tabs {
+  border-bottom: 1px solid var(--border-color) !important;
+  background-color: var(--bg-secondary) !important;
+}
+.tab-nav button {
+  color: var(--text-muted) !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid transparent !important;
+  padding: 0.75rem 1.5rem !important;
+  transition: all 0.2s ease !important;
+}
+.tab-nav button.selected {
+  color: var(--color-accent) !important;
+  border-bottom-color: var(--color-accent) !important;
+  background-color: rgba(59, 130, 246, 0.05) !important;
+}
+
+/* Dashboard Grid Cards */
+.forex-card {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 12px !important;
+  padding: 1.25rem !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  transition: transform 0.2s ease, border-color 0.2s ease !important;
+}
+.forex-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: var(--color-accent) !important;
+}
+
+.price-up {
+  color: var(--color-up) !important;
+  font-weight: bold !important;
+}
+.price-down {
+  color: var(--color-down) !important;
+  font-weight: bold !important;
+}
+
+/* Watchlist & Movers list items */
+.watchlist-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0.75rem 1rem !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  transition: background-color 0.15s ease !important;
+}
+.watchlist-item:hover {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Buttons */
+.gr-button-primary {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  transition: opacity 0.2s ease !important;
+}
+.gr-button-primary:hover {
+  opacity: 0.9 !important;
+}
+.gr-button-secondary {
+  background-color: transparent !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-main) !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+}
+.gr-button-secondary:hover {
+  background-color: var(--border-color) !important;
+}
